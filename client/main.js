@@ -69,12 +69,107 @@ hexToBinary = function(input) {
         }
     }
 
-    return { valid: true, result: addPadding(ret) };
+    return { valid: true, result: ret };
 }
 
-binaryToHex = function(input) {
+bitwiseAnd = function(bin1, bin2) {
 
+    var ret = '';
 
+    if (bin1.length > bin2.length) {
+        thisMany = bin1.length - bin2.length;
+        for (var i = 0; i < thisMany; i++) {
+            bin2 = "0" + bin2;
+        }
+    }
+    else if (bin1.length < bin2.length) {
+        thisMany = bin2.length - bin1.length;
+        for (var i = 0; i < thisMany; i++) {
+            bin1 = "0" + bin1;
+        }
+    }
+
+    bin1 = bin1.split("");
+    bin2 = bin2.split("");
+
+    for (var index = 0; index < bin1.length; index++) {
+        if (bin1[index] == "1" && bin2[index] == "1") {
+            ret += "1";
+        }
+        else {
+            ret += "0";
+        }
+    }
+
+    return ret;
+}
+
+bitwiseOr = function(bin1, bin2) {
+
+    var ret = '';
+
+    if (bin1.length > bin2.length) {
+        thisMany = bin1.length - bin2.length;
+        for (var i = 0; i < thisMany; i++) {
+            bin2 = "0" + bin2;
+        }
+    }
+    else if (bin1.length < bin2.length) {
+        thisMany = bin2.length - bin1.length;
+        for (var i = 0; i < thisMany; i++) {
+            bin1 = "0" + bin1;
+        }
+    }
+
+    bin1 = bin1.split("");
+    bin2 = bin2.split("");
+
+    for (var index = 0; index < bin1.length; index++) {
+        if (bin1[index] == "1" || bin2[index] == "1") {
+            ret += "1";
+        }
+        else {
+            ret += "0";
+        }
+    }
+
+    return ret;
+}
+
+bitwiseXOr = function(bin1, bin2) {
+
+    var ret = '';
+
+    if (bin1.length > bin2.length) {
+        thisMany = bin1.length - bin2.length;
+        for (var i = 0; i < thisMany; i++) {
+            bin2 = "0" + bin2;
+        }
+    }
+    else if (bin1.length < bin2.length) {
+        thisMany = bin2.length - bin1.length;
+        for (var i = 0; i < thisMany; i++) {
+            bin1 = "0" + bin1;
+        }
+    }
+
+    bin1 = bin1.split("");
+    bin2 = bin2.split("");
+
+    for (var index = 0; index < bin1.length; index++) {
+        if (bin1[index] == "1" ^ bin2[index] == "1") {
+            ret += "1";
+        }
+        else {
+            ret += "0";
+        }
+    }
+
+    return ret;
+}
+
+bitwiseNot = function(bin1) {
+    
 }
 
 getLookup = function() {
