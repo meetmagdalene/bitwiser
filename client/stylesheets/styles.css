@@ -1,1 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic,600italic);
 
+/**************************************************
+ General Site Styles
+**************************************************/
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 2em;
+}
+h4 {
+  font-size: 1.5em;
+}
+
+/**************************************************
+ Media Styles
+**************************************************/
+
+/* Extra small devices (phones, less than 768px) */
+/* This is the default styles, so no need to specify media here. */
+@media (min-width: @screen-xs-min) {
+  .navbar {
+    border-radius: 4px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}
+
+/**************************************************
+ Form Styles
+**************************************************/
