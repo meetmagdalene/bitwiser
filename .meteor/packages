@@ -23,3 +23,4 @@ iron:router
 monbro:iron-router-breadcrumb
 tdj:jqueryinputfitjs
 reactive-var
+jesperwe:bootstrap-select
