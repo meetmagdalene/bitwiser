@@ -17,3 +17,8 @@ Template.registerHelper("isHexi", function(base) {
         return "hexi";
     }
 });
+Template.registerHelper("isDeci", function(base) {
+    if (Session.get("base") == base) {
+        return "deci";
+    }
+});

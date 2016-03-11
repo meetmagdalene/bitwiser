@@ -13,9 +13,13 @@ Template.home.events({
         // Only allow digits 1 and 0 and add a space after every four characters
         e.target.value = e.target.value.replace(/[^\(0-1)]/g, '').replace(/(.{4})/g, '$1 ').trim();
     },
-    "keyup .hexi": function(e,t) {
+    "input .hexi": function(e,t) {
         // Only allow characters A-F
-        e.target.value = e.target.value.replace(/[^\dG-Z]/g, '').trim();
+        e.target.value = e.target.value.replace(/[^\d(A-F)(a-f)]/g, '').trim();
+    },
+    "input .deci": function(e,t) {
+        // Only allow digits
+        e.target.value = e.target.value.replace(/[^\(0-9)]/g, '');
     },
     "click #process": function(e,t) {
 

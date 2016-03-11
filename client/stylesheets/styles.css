@@ -47,6 +47,9 @@ input.style-underline  {
     font-size: 3.5em;
     text-transform: uppercase;
 }
+::-webkit-input-placeholder {
+   text-transform: none;
+}
 
 /* Clear the base select input styles */
 select.base-select {
