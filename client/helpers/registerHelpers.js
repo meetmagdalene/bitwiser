@@ -1,10 +1,14 @@
-Template.registerHelper("isBase", function(base) {
-
+Template.registerHelper("isSelectedBase", function(base) {
     if (Session.get("base") == base) {
-        console.log(Session.get("base"));
-        return true;
+        return "selected";
     }
-    else {
-        return false;
-    }
+    // ELSE omitted intentionally
 });
+Template.registerHelper("getBase", function() {
+    return Session.get("base");
+});
+Template.registerHelper("isIban", function(base) {
+    if (Session.get("base") == base) {
+        return "iban";
+    }
+})

@@ -26,6 +26,46 @@ h4 {
   font-size: 1.5em;
 }
 
+
+
+/**************************************************
+ Form Styles
+**************************************************/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input.style-underline  {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 3px #ff6699;
+    transition: border 0.3s;
+    width: 100%;
+    font-size: 3.5em;
+}
+
+/* Clear the base select input styles */
+select.base-select {
+    border: none;
+    background-color: white;
+    margin: 15px 0px;
+    padding: 10px;
+    width: 50%;
+    border-bottom: solid 3px #ff6699;
+}
+
+.btn.btn-block {
+    background-color: #ff6699;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
 /**************************************************
  Media Styles
 **************************************************/
@@ -46,31 +86,4 @@ h4 {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) {
 
-}
-
-/**************************************************
- Form Styles
-**************************************************/
-
-.input-group-addon {
-  font-size: 1.5em;
-}
-.input-group-addon:first-child,
-.input-group-addon:last-child {
-  padding-top: 15px;
-}
-
-input.form-control {
-  font-size: 2.5em;
-  height: 100%;
-}
-input#binary-input {
-  font-size: 1.7em;
-}
-.binary > .input-group-addon {
-  font-size: 1.3em;
-}
-
-button.btn.dropdown-toggle.btn-default {
-  font-size: 1.5em;
 }

@@ -1,36 +1,35 @@
 Template.home.rendered = function() {
-  Session.set("base", "hex");
-  $(".selectpicker").selectpicker();
+    Session.set("base", "binary");
 };
-Template.home.helpers({
-  isBinary: function() {
-    if (Session.get("base") == "binary") {
-      return "selected";
-    }
-    // ELSE omitted intentionally
-  },
-  isDecimal: function() {
-    if (Session.get("base") == "decimal") {
-      return "selected";
-    }
-    // ELSE omitted intentionally
-  },
-  isHex: function() {
-    if (Session.get("base") == "hex") {
-      return "selected";
-    }
-    // ELSE omitted intentionally
-  },
-});
+
 Template.home.events({
-  'submit .all-purpose': function(e, t) {
+    "change .base-select": function(e,t) {
 
-    e.preventDefault();
-    console.log("You have submitted the form!");
-  },
-  'change #base-select': function(e, t) {
+        var newBase = $(".base-select").val();
+        Session.set("base", newBase);
+    },
+    "keyup .iban": function(e,t) {
 
-    var selectedBase = $("#base-select").val();
-    Session.set("base", selectedBase);
-  }
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    }
 });
+
+Template.home.helpers({
+    basePlaceholder: function() {
+
+        var base = Session.get("base");
+
+        switch (base) {
+            case "hex":
+                return "0x00000000";
+                break;
+            case "binary":
+                return "0000 0000 0000 0000";
+                break;
+            case "decimal":
+            default:
+                return "0";
+                break;
+        }
+    }
+})
