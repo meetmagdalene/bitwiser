@@ -1,5 +1,6 @@
 Template.home.rendered = function() {
     Session.set("base", "binary");
+    $(".loading").hide();
 };
 
 Template.home.events({
@@ -8,9 +9,22 @@ Template.home.events({
         var newBase = $(".base-select").val();
         Session.set("base", newBase);
     },
-    "keyup .iban": function(e,t) {
+    "input .iban": function(e,t) {
+        // Only allow digits 1 and 0 and add a space after every four characters
+        e.target.value = e.target.value.replace(/[^\(0-1)]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    },
+    "keyup .hexi": function(e,t) {
+        // Only allow characters A-F
+        e.target.value = e.target.value.replace(/[^\dG-Z]/g, '').trim();
+    },
+    "click #process": function(e,t) {
 
-        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+        e.preventDefault();
+        $(".loading").show();
+
+        setTimeout(function() {
+            $(".loading").hide();
+        }, 3000);
     }
 });
 

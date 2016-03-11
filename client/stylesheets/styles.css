@@ -45,6 +45,7 @@ input.style-underline  {
     transition: border 0.3s;
     width: 100%;
     font-size: 3.5em;
+    text-transform: uppercase;
 }
 
 /* Clear the base select input styles */
@@ -53,7 +54,8 @@ select.base-select {
     background-color: white;
     margin: 15px 0px;
     padding: 10px;
-    width: 50%;
+    width: 100%;
+    font-size: 2em;
     border-bottom: solid 3px #ff6699;
 }
 
@@ -65,6 +67,11 @@ select.base-select {
     font-size: 2.5em;
     font-weight: 500;
 }
+.loading {
+    font-size: 3em;
+    text-align: center;
+    color: #666666;
+}
 
 /**************************************************
  Media Styles
@@ -74,16 +81,21 @@ select.base-select {
 /* This is the default styles, so no need to specify media here. */
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-
+@media (max-width: 768px) {
+    input.style-underline  {
+        font-size: 2em;
+    }
+    select.base-select {
+        font-size: 1.5em;
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) {
+@media (max-width: 992px) {
 
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) {
+@media (min-width: 1200px) {
 
 }

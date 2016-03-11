@@ -11,4 +11,9 @@ Template.registerHelper("isIban", function(base) {
     if (Session.get("base") == base) {
         return "iban";
     }
-})
+});
+Template.registerHelper("isHexi", function(base) {
+    if (Session.get("base") == base) {
+        return "hexi";
+    }
+});
