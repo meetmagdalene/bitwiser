@@ -7,13 +7,14 @@
 html {
   overflow-y: scroll;
   min-height: 100%;
+  position: relative;
 }
 body {
   font-family: 'Open Sans', 'Helvetica', sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding-top: 70px; /* body offset for navbar */
-  margin-bottom: 60px;
+  margin-bottom: 45px;
 }
 h1 {
   font-size: 4em;
@@ -42,7 +43,19 @@ h4 {
     color: #777;
 }
 .github-link:hover {
-    color: #ff6699;
+    color: #00cc99;
+}
+.loading {
+    font-size: 3em;
+    text-align: center;
+    color: #666666;
+}
+.result {
+    font-size: 3em;
+    border-bottom: 3px solid #ccc;
+    padding: 10px 15px;
+    margin-bottom: 0;
+    margin-top: 25px;
 }
 
 
@@ -59,10 +72,10 @@ button:focus {
 input.style-underline  {
     padding: 10px;
     border: none;
-    border-bottom: solid 3px #ff6699;
+    border-bottom: solid 3px #00cc99;
     transition: border 0.3s;
     width: 100%;
-    font-size: 3.5em;
+    font-size: 4.5em;
     text-transform: uppercase;
 }
 ::-webkit-input-placeholder {
@@ -73,25 +86,20 @@ input.style-underline  {
 select.base-select {
     border: none;
     background-color: white;
-    margin: 15px 0px;
+    margin: 15px 0px 25px 0px;
     padding: 10px;
     width: 100%;
-    font-size: 2em;
-    border-bottom: solid 3px #ff6699;
+    font-size: 2.5em;
+    border-bottom: solid 3px #00cc99;
 }
 
 .btn.btn-block {
-    background-color: #ff6699;
+    background-color: #00cc99;
     border: none;
     border-radius: 6px;
     color: white;
     font-size: 2.5em;
     font-weight: 500;
-}
-.loading {
-    font-size: 3em;
-    text-align: center;
-    color: #666666;
 }
 
 /**************************************************
@@ -108,6 +116,9 @@ select.base-select {
     }
     select.base-select {
         font-size: 1.5em;
+    }
+    .result {
+        font-size: 2em;
     }
 }
 

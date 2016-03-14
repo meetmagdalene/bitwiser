@@ -1,6 +1,6 @@
 Template.home.rendered = function() {
     Session.set("base", "binary");
-    $(".loading").hide();
+    $(".loading, .results").hide();
 };
 
 Template.home.helpers({
@@ -29,6 +29,7 @@ Template.home.events({
         var newBase = $(".base-select").val();
         Session.set("base", newBase);
         $("input").val("");
+        $(".results").hide();
     },
     "input .iban": function(e,t) {
         // Only allow digits 1 and 0 and add a space after every four characters
@@ -41,10 +42,12 @@ Template.home.events({
     "input .deci": function(e,t) {
         // Only allow digits
         e.target.value = e.target.value.replace(/[^\(0-9)]/g, '');
+        // e.target.value = Helpers.commaSeparateNumber(e.target.value);
     },
     "click #process": function(e,t) {
 
         e.preventDefault();
+        $(".results").hide();
         $(".loading").show();
 
         var base = Session.get("base");
@@ -54,7 +57,12 @@ Template.home.events({
         var result = {};
 
         if (base == "binary") {
+
+            console.log("pre-clean: " + currValue);
+
             currValue = Helpers.cleanBinary(currValue);
+
+            console.log("post-clean: " + currValue);
         }
         // ELSE omitted intentionally
 
@@ -65,6 +73,7 @@ Template.home.events({
                 result.octal = parseInt(currValue, 16).toString(8).toUpperCase();
                 result.decimal = parseInt(currValue, 16).toString(10);
                 result.hex = currValue.toUpperCase();
+
                 break;
 
             case "binary":
@@ -73,6 +82,7 @@ Template.home.events({
                 result.octal = parseInt(currValue, 2).toString(8).toUpperCase();
                 result.decimal = parseInt(currValue, 2).toString(10);
                 result.hex = parseInt(currValue, 2).toString(16).toUpperCase();
+
                 break;
 
             case "decimal":
@@ -82,6 +92,7 @@ Template.home.events({
                 result.octal = parseInt(currValue, 10).toString(8).toUpperCase();
                 result.decimal = currValue;
                 result.hex = parseInt(currValue, 10).toString(16).toUpperCase();
+
                 break;
         }
 
@@ -90,6 +101,14 @@ Template.home.events({
         console.log("Decimal: " + result.decimal);
         console.log("Hex: " + result.hex);
 
-        $(".loading").hide();
+        $(".binary-result p").html(Helpers.prettyBinary(result.binary));
+        $(".decimal-result p").html(Helpers.commaSeparateNumber(result.decimal));
+        $(".hex-result p").html("<span style='color:#999;'>0x</span>" + result.hex);
+
+        setTimeout(function() {
+
+            $(".results").show();
+            $(".loading").hide();
+        }, 1500);
     }
 });
