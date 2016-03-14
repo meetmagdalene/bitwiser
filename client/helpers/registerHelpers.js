@@ -22,3 +22,6 @@ Template.registerHelper("isDeci", function(base) {
         return "deci";
     }
 });
+Template.registerHelper("getYear", function() {
+    return moment().format("YYYY");
+})

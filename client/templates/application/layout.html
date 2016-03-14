@@ -1,9 +1,10 @@
 <template name='layout'>
     <div class='container'>
-        {{> navbar}}  
+        {{> navbar}}
         {{#if notHome}} {{> breadcrumbs}} {{/if}}
         <div id='main'>
             {{> yield}}
         </div>
     </div>
+    {{> footer}}
 </template>
