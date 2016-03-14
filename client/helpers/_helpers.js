@@ -11,7 +11,7 @@ Helpers = {
     },
     cleanBinary: function(binary) {
         // Strip the whiteplaces
-        return binary.replace(" ", "").trim();
+        return binary.replace(/ /g, "").trim();
     }
 
 };
