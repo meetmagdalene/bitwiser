@@ -15,6 +15,7 @@ body {
   font-weight: 400;
   padding-top: 70px; /* body offset for navbar */
   margin-bottom: 45px;
+  min-height: 800px;
 }
 h1 {
   font-size: 4em;
@@ -39,10 +40,12 @@ h4 {
   padding-top: 15px;
   font-size: 0.8em;
 }
-.github-link {
+.title-link,
+.link {
     color: #777;
 }
-.github-link:hover {
+.title-link:hover,
+.link:hover {
     color: #00cc99;
 }
 .loading {
@@ -118,7 +121,10 @@ select.base-select {
         font-size: 1.5em;
     }
     .result {
-        font-size: 2em;
+        font-size: 1.8em;
+    }
+    .link {
+        display: none;
     }
 }
 
