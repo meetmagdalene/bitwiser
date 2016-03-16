@@ -48,7 +48,7 @@ Template.home.events({
 
         e.preventDefault();
         $(".results").hide();
-        $(".loading").show();
+        // $(".loading").show();
 
         var base = Session.get("base");
         var currValue = $("input").val();
@@ -105,10 +105,9 @@ Template.home.events({
         $(".decimal-result p").html(Helpers.commaSeparateNumber(result.decimal));
         $(".hex-result p").html("<span style='color:#999;'>0x</span>" + result.hex);
 
-        setTimeout(function() {
 
-            $(".results").show();
-            $(".loading").hide();
-        }, 1500);
+
+        $(".results").show();
+        // $(".loading").hide();
     }
 });
