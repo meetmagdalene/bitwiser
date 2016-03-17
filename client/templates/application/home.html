@@ -1,51 +1,58 @@
 <template name='home'>
-  <div class="row">
-    <div class="col-xs-12">
-        <form class="form all-purpose">
-            <div class="form-group">
-                <input type="text" class="style-underline col-sm-12 {{isIban 'binary'}} {{isHexi 'hex'}} {{isDeci 'decimal'}}" placeholder="{{basePlaceholder}}"/>
-            </div>
-            <div class="form-group">
-                <select class="base-select col-sm-6" name="base-select">
-                    <option value="binary" selected={{isSelectedBase "binary"}}>Binary</option>
-                    <option value="decimal" selected={{isSelectedBase "decimal"}}>Decimal</option>
-                    <option value="hex" selected={{isSelectedBase "hex"}} default>Hexadecimal</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-block" id="process">Convert</button>
-            </div>
-        </form>
-    </div>
-  </div>
-  <div class="row">
-      <div class="col-xs-12">
+    <div class="container">
 
-          <div class="loading">
-              <i class="fa fa-cog fa-spin"></i>
-          </div>
+        <div class="row">
+            <div class="col-xs-12">
 
-          <div class="results">
-              <div class="binary-result">
-                  <p class="result">
+                <form class="form all-purpose">
+                    <div class="form-group">
+                        <input type="text" class="style-underline col-sm-12 {{isIban 'binary'}} {{isHexi 'hex'}} {{isDeci 'decimal'}}" placeholder="{{basePlaceholder}}"/>
+                    </div>
+                    <div class="form-group">
+                        <select class="base-select col-sm-6" name="base-select">
+                            <option value="binary" selected={{isSelectedBase "binary"}}>Binary</option>
+                            <option value="decimal" selected={{isSelectedBase "decimal"}}>Decimal</option>
+                            <option value="hex" selected={{isSelectedBase "hex"}} default>Hexadecimal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-block" id="process">Convert</button>
+                    </div>
+                </form><!-- end form.all-purpose -->
 
-                  </p>
-                  <h4 class="pull-right">Binary</h4>
-              </div>
-              <div class="decimal-result">
-                  <p class="result">
+            </div><!-- end .col-xs-12 -->
+        </div> <!-- end .row -->
 
-                  </p>
-                  <h4 class="pull-right">Decimal</h4>
-              </div>
-              <div class="hex-result">
-                  <p class="result">
+        <div class="row">
+            <div class="col-xs-12">
 
-                  </p>
-                  <h4 class="pull-right">Hex</h4>
-              </div>
-          </div>
+                <div class="loading">
+                    <i class="fa fa-cog fa-spin"></i>
+                </div>
 
-      </div>
-  </div>
+                <div class="results">
+                    <div class="binary-result">
+                        <p class="result">
+                            <!-- binary result will load here -->
+                        </p>
+                        <h4 class="pull-right">Binary</h4>
+                    </div>
+                    <div class="decimal-result">
+                        <p class="result">
+                            <!-- decimal result will load here -->
+                        </p>
+                        <h4 class="pull-right">Decimal</h4>
+                    </div>
+                    <div class="hex-result">
+                        <p class="result">
+                            <!-- hex result will load here -->
+                        </p>
+                        <h4 class="pull-right">Hex</h4>
+                    </div>
+                </div><!-- end .results -->
+
+            </div><!-- end .col-xs-12 -->
+        </div><!-- end .row -->
+        
+    </div><!-- end .container -->
 </template>
