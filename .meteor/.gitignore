@@ -1,4 +1,5 @@
 local
 ../public/
+../public/images
 ../mup.json
 ../settings.json
