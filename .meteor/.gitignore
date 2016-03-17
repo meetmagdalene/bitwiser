@@ -1,4 +1,4 @@
 local
-../public
-../mup.json
-../settings.json
+public
+mup.json
+settings.json
